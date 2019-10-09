@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<skin>
+	<information>
+		<name>Minimal #1</name>
+		<version>1.0.0-beta</version>
+		<description><![CDATA[앨범형식 반응형 티스토리 스킨입니다.]]></description>
+		<license><![CDATA[MIT License]]></license>
+	</information>
+	<author>
+		<name>ThemeBrew</name>
+		<homepage>themebrew.io</homepage>
+		<email>contact@themebrew.io</email>
+	</author>
+	<default>
+		<recentEntries>5</recentEntries>
+		<recentComments>5</recentComments>
+		<recentTrackbacks>5</recentTrackbacks>
+		<itemsOnGuestbook>5</itemsOnGuestbook>
+		<tagsInCloud>30</tagsInCloud>
+		<sortInCloud>3</sortInCloud>
+		<expandComment>1</expandComment>
+		<expandTrackback>0</expandTrackback>
+		<lengthOfRecentNotice>70</lengthOfRecentNotice>
+		<lengthOfRecentEntry>70</lengthOfRecentEntry>
+		<lengthOfRecentComment>70</lengthOfRecentComment>
+		<lengthOfRecentTrackback>0</lengthOfRecentTrackback>
+		<lengthOfLink>70</lengthOfLink>
+		<showListOnCategory>1</showListOnCategory>
+		<showListOnArchive>1</showListOnArchive>
+		<commentMessage>
+			<none>0</none>
+			<single>1</single>
+		</commentMessage>
+		<trackbackMessage>
+			<none>0</none>
+			<single>1</single>
+		</trackbackMessage>
+		<tree>
+			<color>000000</color>
+			<bgColor>ffffff</bgColor>
+			<activeColor>000000</activeColor>
+			<activeBgColor>eeeeee</activeBgColor>
+			<labelLength>27</labelLength>
+			<showValue>1</showValue>
+		</tree>
+		<contentWidth>960</contentWidth>
+	</default>
+	<variables>
+		<variablegroup name="기본정보">
+			<variable>
+				<name>copyright-year</name>
+				<label><![CDATA[카피라이트 연도]]></label>
+				<description><![CDATA[블로그 하단의 카피라이트에 나타나는 연도를 수정할 수 있습니다.]]></description>
+				<type>STRING</type>
+				<option></option>
+				<default>2019</default>
+			</variable>
+		</variablegroup>
+	</variables>
+</skin>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>[##_page_title_##]</title>
+
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700&display=swap&subset=korean" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.1/css/all.css">
+
+	<!-- Core -->
+	<link rel="stylesheet" href="./images/reset.min.css">
+	<link rel="stylesheet" href="./images/core.min.css">
+
+	<script>
+		var images = './images';
+	</script>
+</head>
+
+<body id="[##_body_id_##]">
+	<s_t3>
+		<div id="wrap">
+			<header id="header" class="screen-reader-text">
+				<h1 class="title">[##_title_##]</h1>
+			</header>
+
+			<main id="main">
+				<div class="container">
+					<div id="main-inner">
+						<aside id="sidebar">
+							<div id="sidebar-inner">
+								<div id="sidebar-content">
+									<div class="profile">
+										<div class="image">
+											<a href="[##_blog_link_##]">[##_blog_image_##]</a>
+										</div>
+										<h2 class="title"><a href="[##_blog_link_##]">[##_title_##]</a></h2>
+										<div class="description">[##_desc_##]</div>
+									</div>
+
+									<div class="category">
+										[##_category_list_##]
+									</div>
+								</div>
+
+								<div id="sidebar-other">
+									<div class="buttons">
+										<ul>
+											<li>
+												<a href="[##_guestbook_link_##]">
+													<i class="far fa-comments"></i>
+													<span class="screen-reader-text">방명록</span>
+												</a>
+											</li>
+											<li>
+												<a href="[##_taglog_link_##]">
+													<i class="fas fa-hashtag"></i>
+													<span class="screen-reader-text">태그 목록</span>
+												</a>
+											</li>
+											<li>
+												<a href="/manage">
+													<i class="fas fa-cog"></i>
+													<span class="screen-reader-text">관리자</span>
+												</a>
+											</li>
+										</ul>
+									</div>
+
+									<div class="search">
+										<form action="#">
+											<input type="search" placeholder="Search">
+											<button type="submit">
+												<i class="fas fa-search"></i>
+												<span class="screen-reader-text">Find</span>
+											</button>
+										</form>
+									</div>
+								</div>
+							</div>
+						</aside>
+
+						<s_list>
+							<section id="list" class="content-common">
+								<header id="list-header" class="screen-reader-text">
+									<h2 class="title">[##_list_conform_##]</h2>
+								</header>
+
+								<div id="list-container">
+									<ol class="grid">
+										<s_list_rep>
+											<li class="grid-item">
+												<a href="[##_list_rep_link_##]">
+													<div class="thumbnail">
+														<s_list_rep_thumbnail><img src="//img1.daumcdn.net/thumb/R300x0/?fname=[##_list_rep_thumbnail_##]" alt=""></s_list_rep_thumbnail>
+														<h3 class="title screen-reader-text">[##_list_rep_title_##]</h3>
+													</div>
+													<div class="data">
+														<div class="category">[##_list_rep_category_##]</div>
+														<time class="date" datetime="[##_list_rep_date_year_##]-[##_list_rep_date_month_##]-[##_list_rep_date_day_##] [##_list_rep_date_hour_##]:[##_list_rep_date_minute_##]:[##_list_rep_date_second_##]">[##_list_rep_regdate_##]</time>
+													</div>
+												</a>
+											</li>
+										</s_list_rep>
+									</ol>
+								</div>
+							</section>
+						</s_list>
+
+						<s_article_rep>
+							<section id="post" class="content-common">
+								<div id="post-inner">
+									<header id="post-header">
+										<h2 class="title">[##_article_rep_title_##]</h2>
+										<div class="data">
+											<div class="common category"><a href="[##_article_rep_category_link_##]">[##_article_rep_category_##]</a></div>
+											<time class="common date" datetime="[##_article_rep_date_year_##]-[##_article_rep_date_month_##]-[##_article_rep_date_day_##] [##_article_rep_date_hour_##]:[##_article_rep_date_minute_##]:[##_article_rep_date_second_##]">[##_article_rep_simple_date_##]</time>
+											<div class="common author">[##_article_rep_author_##]</div>
+										</div>
+									</header>
+
+									<div id="post-container">
+										[##_article_rep_desc_##]
+									</div>
+
+									<s_tag_label>
+										<div id="post-tags">
+											<div class="label"><i class="fas fa-hashtag"></i></div>
+											<div class="list">[##_tag_label_rep_##]</div>
+										</div>
+									</s_tag_label>
+								</div>
+
+								<div id="post-moving">
+									<s_article_next>
+										<div class="common next">
+											<a href="[##_article_next_link_##]" class="[##_article_next_type_##]">
+												<div class="image">
+													<s_article_next_thumbnail>
+														<img src="//img1.daumcdn.net/thumb/C100x100/?fname=[##_article_next_thumbnail_link_##]" alt="이전 게시물">
+													</s_article_next_thumbnail>
+												</div>
+
+												<div class="label"><i class="fas fa-chevron-left"></i></div>
+												<div class="screen-reader-text">[##_article_next_title_##]</div>
+											</a>
+										</div>
+									</s_article_next>
+
+									<s_article_prev>
+										<div class="common prev">
+											<a href="[##_article_prev_link_##]" class="[##_article_prev_type_##]">
+												<div class="image">
+													<s_article_prev_thumbnail>
+														<img src="//img1.daumcdn.net/thumb/C100x100/?fname=[##_article_prev_thumbnail_link_##]" alt="이전 게시물">
+													</s_article_prev_thumbnail>
+												</div>
+
+												<div class="label"><i class="fas fa-chevron-right"></i></div>
+												<div class="screen-reader-text">[##_article_prev_title_##]</div>
+											</a>
+										</div>
+									</s_article_prev>
+								</div>
+
+
+								<div id="post-comments">comments</div>
+							</section>
+						</s_article_rep>
+					</div>
+				</div>
+			</main>
+
+			<footer id="footer">
+				<div class="container">
+					<div id="footer-inner">
+						<div class="copyright">Copyright 2019 [##_title_##] All Rights Reserved.</div>
+						<div class="other">
+							<a href="[##_rss_url_##]" target="_blank" rel="noopener">
+								<i class="fas fa-rss"></i>
+								<span class="screen-reader-text">RSS</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</s_t3>
+
+	<!-- Vendor -->
+	<script src="./images/masonry.pkgd.min.js"></script>
+	<script src="./images/imagesloaded.pkgd.min.js"></script>
+
+	<!-- Core -->
+	<script>
+		// list only
+		var grid = document.querySelector('#list-container .grid');
+
+		if ( grid !== null ) {
+			var msnry = new Masonry( grid, {
+				initLayout: false,
+				itemSelector: '.grid-item',
+				percentPosition: true,
+				horizontalOrder: true
+			});
+
+			imagesLoaded( grid ).on( 'progress', function() {
+				msnry.layout();
+				grid.parentNode.classList.add('loaded');
+			});
+		}
+	</script>
+</body>
+</html>
