@@ -163,8 +163,98 @@
 									</s_article_prev>
 								</div>
 
+								<s_rp>
+									<div id="communicate">
+										<h2 class="title">+ COMMENTS</h2>
 
-								<div id="post-comments">comments</div>
+										<s_rp_container>
+											<div id="communicate-lists">
+												<ol class="rp1">
+													<s_rp_rep>
+														<li id="[##_rp_rep_id_##]">
+															<div class="contents">
+																<div class="data">
+																	<div class="photo" style="background-image: url('[##_rp_rep_logo_##]');"></div>
+
+																	<div class="name">[##_rp_rep_name_##]</div>
+																	<div class="date">[##_rp_rep_date_##]</div>
+
+																	<div class="buttons">
+																		<a class="common address" href="[##_rp_rep_link_##]">#</a>
+																		<a class="common edit" onclick="[##_rp_rep_onclick_delete_##]" href="#">EDIT</a>
+																		<a class="common reply" onclick="[##_rp_rep_onclick_reply_##]" href="#">REPLY</a>
+																	</div>
+																</div>
+
+																<div class="article">[##_rp_rep_desc_##]</div>
+															</div>
+
+															<s_rp2_container>
+																<ul class="rp2">
+																	<s_rp2_rep>
+																		<li id="[##_rp_rep_id_##]">
+																			<div class="contents">
+																				<div class="data">
+																					<div class="photo" style="background-image: url('[##_rp_rep_logo_##]');"></div>
+
+																					<div class="name">[##_rp_rep_name_##]</div>
+																					<div class="date">[##_rp_rep_date_##]</div>
+
+																					<div class="buttons">
+																						<a class="common address" href="[##_rp_rep_link_##]">#</a>
+																						<a class="common edit" onclick="[##_rp_rep_onclick_delete_##]" href="#">EDIT</a>
+																						<a class="common reply" onclick="[##_rp_rep_onclick_reply_##]" href="#">REPLY</a>
+																					</div>
+																				</div>
+
+																				<div class="article">[##_rp_rep_desc_##]</div>
+																			</div>
+																		</li>
+																	</s_rp2_rep>
+																</ul>
+															</s_rp2_container>
+														</li>
+													</s_rp_rep>
+												</ol>
+											</div>
+										</s_rp_container>
+
+										<s_rp_input_form>
+											<div id="communicate-editor">
+												<s_rp_member>
+													<s_rp_guest>
+														<div class="input">
+															<div class="common name">
+																<div class="label">NAME</div>
+																<input name="[##_rp_input_name_##]" value="[##_guest_name_##]" type="text">
+															</div>
+															<div class="common password">
+																<div class="label">PASSWORD</div>
+																<input name="[##_rp_input_password_##]" value="[##_rp_admin_check_##]" type="password">
+															</div>
+															<div class="common website">
+																<div class="label">WEBSITE</div>
+																<input name="[##_rp_input_homepage_##]" value="[##_guest_homepage_##]" type="url">
+															</div>
+														</div>
+													</s_rp_guest>
+												</s_rp_member>
+
+												<div class="textarea">
+													<textarea name="[##_rp_input_comment_##]"></textarea>
+												</div>
+
+												<div class="buttons">
+													<label>
+														<input type="checkbox" name="secret">
+														<div class="label">SECRET</div>
+													</label>
+													<button onclick="[##_rp_onclick_submit_##]" type="submit">SUBMIT</button>
+												</div>
+											</div>
+										</s_rp_input_form>
+									</div>
+								</s_rp>
 							</section>
 						</s_article_rep>
 					</div>

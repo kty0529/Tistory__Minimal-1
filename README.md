@@ -1,8 +1,19 @@
 # Tistory 공개 스킨 - Minimal #1
-
-## Description
 테마브루에서 제작/배포하는 티스토리 전용 공개 스킨입니다.
 최소한의 기능으로 사진위주의 포스팅을 등록하는 블로거에게 최적화 되어있습니다.
+
+## Infomation
+- 스킨명: Minimal #1
+- 데모 블로그: https://minimal1.ts.themebrew.io
+- 반응형웹
+- 사용 언어: HTML5, CSS3, SCSS, Javascript
+
+## Option
+- 카피라이트 연도 수정
+
+## Browser Support
+- IE10+
+- 그밖의 대부분 브라우저
 
 ## License
 The MIT License.

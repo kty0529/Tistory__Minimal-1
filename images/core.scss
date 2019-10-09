@@ -245,10 +245,9 @@ a {
 				padding: 0 45px 0 15px;
 				width: 100%;
 				height: 50px;
-				color: #52678A;
-				background-color: #19212F;
 				font-size: 13px;
 				color: #52678A;
+				background-color: #19212F;
 
 				&::-webkit-input-placeholder { color: #52678A; }
 				&::-moz-placeholder { color: #52678A; }
@@ -449,4 +448,106 @@ a {
 			margin-left: auto;
 		}
 	}
+}
+
+
+/**
+ * Communicate
+ */
+#communicate {
+	margin-top: 100px;
+
+	.title {
+		margin-bottom: 30px;
+		font-size: 14px;
+		font-weight: 500;
+		color: #52678A;
+	}
+
+	&-lists {
+		a {
+			transition: opacity 0.3s;
+
+			&:hover {
+				color: inherit;
+				opacity: 0.9;
+			}
+		}
+
+		ol,
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+
+			li {
+				margin-top: 30px;
+			}
+
+			.contents {
+				display: flex;
+				padding: 20px 10px;
+				color: #f5f5f5;
+				font-size: 14px;
+				background-color: #19212F;
+
+				.data {
+					flex: 0 0 auto;
+					width: 100px;
+					font-size: 13px;
+
+					.photo {
+						margin-top: -30px;
+						width: 50px;
+						height: 50px;
+						background-size: cover;
+					}
+
+					.name {
+						margin-top: 15px;
+						font-weight: 500;
+
+						img {
+							display: none;
+						}
+					}
+
+					.date {
+						margin-top: 15px;
+						font-size: 12px;
+					}
+
+					.buttons {
+						margin-top: 5px;
+						font-size: 12px;
+
+						.common {
+							display: inline-block;
+							margin-right: 4px;
+						}
+					}
+				}
+
+				.article {
+					flex: 1 1 auto;
+					margin-left: 10px;
+					padding-left: 20px;
+					border-left: 1px solid #52678A;
+				}
+			}
+		}
+
+		.rp1 {
+			& > li {
+			}
+		}
+
+		.rp2 {
+			& > li {
+				margin-left: 20px;
+			}
+		}
+	}
+
+	&-editor {}
 }
