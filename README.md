@@ -28,3 +28,4 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 ## Open Source License
 - Masonry (https://masonry.desandro.com/)
 - imagesLoaded (https://imagesloaded.desandro.com/)
+- FontAwesome 5 free (https://fontawesome.com/)
