@@ -28,3 +28,5 @@ overlay.addEventListener('click', function() {
 	var root = document.querySelector('html');
 	root.classList.remove('sidebar-active', 'scroll-lock');
 });
+
+console.log('Minimal #1 1.0.0 / Skin by themebrew.io')

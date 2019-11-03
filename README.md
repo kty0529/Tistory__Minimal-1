@@ -5,11 +5,12 @@
 ## Infomation
 - 스킨명: Minimal #1
 - 데모 블로그: https://minimal1.ts.themebrew.io
-- 반응형웹
+- 반응형웹 지원
 - 사용 언어: HTML5, CSS3, SCSS, Javascript
 
 ## Option
 - 카피라이트 연도 수정
+- 글 목록 수정
 
 ## Browser Support
 - IE10+
