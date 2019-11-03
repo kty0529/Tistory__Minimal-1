@@ -2,7 +2,7 @@
 <skin>
 	<information>
 		<name>Minimal #1</name>
-		<version>1.0.0-beta</version>
+		<version>1.0.0</version>
 		<description><![CDATA[앨범형식 반응형 티스토리 스킨입니다.]]></description>
 		<license><![CDATA[MIT License]]></license>
 	</information>
@@ -27,6 +27,8 @@
 		<lengthOfLink>70</lengthOfLink>
 		<showListOnCategory>1</showListOnCategory>
 		<showListOnArchive>1</showListOnArchive>
+		<entriesOnPage>9</entriesOnPage>
+		<entriesOnList>9</entriesOnList>
 		<commentMessage>
 			<none>0</none>
 			<single>1</single>
@@ -54,6 +56,40 @@
 				<type>STRING</type>
 				<option></option>
 				<default>2019</default>
+			</variable>
+		</variablegroup>
+		<variablegroup name="글 목록">
+			<variable>
+				<name>list-count</name>
+				<label><![CDATA[목록 컬럼 수]]></label>
+				<description><![CDATA[글 목록에서 정렬되는 블럭의 개수를 조절할 수 있습니다.]]></description>
+				<type>STRING</type>
+				<option></option>
+				<default>3</default>
+			</variable>
+			<variable>
+				<name>list-hide-category</name>
+				<label><![CDATA[카테고리 숨기기]]></label>
+				<description><![CDATA[글 목록에서 사진 아래에 노출되는 카테고리를 숨길 수 있습니다.]]></description>
+				<type>BOOL</type>
+				<option></option>
+				<default>false</default>
+			</variable>
+			<variable>
+				<name>list-hide-date</name>
+				<label><![CDATA[날짜 숨기기]]></label>
+				<description><![CDATA[글 목록에서 사진 아래에 노출되는 날짜를 숨길 수 있습니다.]]></description>
+				<type>BOOL</type>
+				<option></option>
+				<default>false</default>
+			</variable>
+			<variable>
+				<name>list-show-data</name>
+				<label><![CDATA[카테고리, 날짜 모두 숨기기]]></label>
+				<description><![CDATA[글 목록에서 사진 아래에 노출되는 카테고리와 날짜를 모두 숨길 수 있습니다.]]></description>
+				<type>BOOL</type>
+				<option></option>
+				<default>false</default>
 			</variable>
 		</variablegroup>
 	</variables>

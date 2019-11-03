@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>[##_page_title_##]</title>
+	<meta name="viewport" content="initial-scale=1.0, minimum-scale=1,0, width=device-width">
 
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700&display=swap&subset=korean" rel="stylesheet">
@@ -15,13 +16,32 @@
 	<script>
 		var images = './images';
 	</script>
+
+	<!-- Options -->
+	<style>
+		#list-container ol li { width: calc( ( 100% / [##_var_list-count_##] ) - 30px ); }
+		@media all and (max-width: 960px) {
+			#list-container ol li { width: calc( ( 100% / 3 ) - 30px ); }
+		}
+		@media all and (max-width: 768px) {
+			#list-container ol li { width: calc( ( 100% / 2 ) - 30px ); }
+		}
+		@media all and (max-width: 639px) {
+			#list-container ol li { width: calc( ( 100% / 1 ) - 30px ); }
+		}
+	</style>
+	<link rel="stylesheet" href="./style.css">
 </head>
 
 <body id="[##_body_id_##]">
 	<s_t3>
 		<div id="wrap">
-			<header id="header" class="screen-reader-text">
-				<h1 class="title">[##_title_##]</h1>
+			<header id="header">
+				<h1 class="title"><a href="[##_blog_link_##]">[##_title_##]</a></h1>
+
+				<div class="toggle-sidebar">
+					<span></span>
+				</div>
 			</header>
 
 			<main id="main">
@@ -47,19 +67,19 @@
 									<div class="buttons">
 										<ul>
 											<li>
-												<a href="[##_guestbook_link_##]">
+												<a href="[##_guestbook_link_##]" title="방명록">
 													<i class="far fa-comments"></i>
 													<span class="screen-reader-text">방명록</span>
 												</a>
 											</li>
 											<li>
-												<a href="[##_taglog_link_##]">
+												<a href="[##_taglog_link_##]" title="태그 클라우드">
 													<i class="fas fa-hashtag"></i>
-													<span class="screen-reader-text">태그 목록</span>
+													<span class="screen-reader-text">태그 클라우드</span>
 												</a>
 											</li>
 											<li>
-												<a href="/manage">
+												<a href="/manage" title="관리자(새창)" target="_blank">
 													<i class="fas fa-cog"></i>
 													<span class="screen-reader-text">관리자</span>
 												</a>
@@ -67,213 +87,356 @@
 										</ul>
 									</div>
 
-									<div class="search">
-										<form action="#">
-											<input type="search" placeholder="Search">
-											<button type="submit">
-												<i class="fas fa-search"></i>
-												<span class="screen-reader-text">Find</span>
-											</button>
-										</form>
+									<s_search>
+										<div class="search">
+											<form method="post" onsubmit="return search_function(this);">
+												<input type="search" name="[##_search_name_##]" value="[##_search_text_##]" placeholder="Search">
+												<button type="submit">
+													<i class="fas fa-search"></i>
+													<span class="screen-reader-text">Find</span>
+												</button>
+											</form>
+											<script>
+												function search_function(form) {
+													var val = form.search.value;
+													window.location.href = '/search/'+val;
+													return false;
+												}
+											</script>
+										</div>
+									</s_search>
+
+									<div class="copyright">
+										ⓒ [##_var_copyright-year_##] [##_title_##]
 									</div>
 								</div>
 							</div>
 						</aside>
 
-						<s_list>
-							<section id="list" class="content-common">
-								<header id="list-header" class="screen-reader-text">
-									<h2 class="title">[##_list_conform_##]</h2>
-								</header>
-
-								<div id="list-container">
-									<ol class="grid">
-										<s_list_rep>
-											<li class="grid-item">
-												<a href="[##_list_rep_link_##]">
-													<div class="thumbnail">
-														<s_list_rep_thumbnail><img src="//img1.daumcdn.net/thumb/R300x0/?fname=[##_list_rep_thumbnail_##]" alt=""></s_list_rep_thumbnail>
-														<h3 class="title screen-reader-text">[##_list_rep_title_##]</h3>
-													</div>
-													<div class="data">
-														<div class="category">[##_list_rep_category_##]</div>
-														<time class="date" datetime="[##_list_rep_date_year_##]-[##_list_rep_date_month_##]-[##_list_rep_date_day_##] [##_list_rep_date_hour_##]:[##_list_rep_date_minute_##]:[##_list_rep_date_second_##]">[##_list_rep_regdate_##]</time>
-													</div>
-												</a>
-											</li>
-										</s_list_rep>
-									</ol>
-								</div>
-							</section>
-						</s_list>
-
-						<s_article_rep>
-							<section id="post" class="content-common">
-								<div id="post-inner">
-									<header id="post-header">
-										<h2 class="title">[##_article_rep_title_##]</h2>
-										<div class="data">
-											<div class="common category"><a href="[##_article_rep_category_link_##]">[##_article_rep_category_##]</a></div>
-											<time class="common date" datetime="[##_article_rep_date_year_##]-[##_article_rep_date_month_##]-[##_article_rep_date_day_##] [##_article_rep_date_hour_##]:[##_article_rep_date_minute_##]:[##_article_rep_date_second_##]">[##_article_rep_simple_date_##]</time>
-											<div class="common author">[##_article_rep_author_##]</div>
-										</div>
+						<div id="container">
+							<s_list>
+								<section id="list">
+									<header id="list-header" class="screen-reader-text">
+										<h2 class="title">[##_list_conform_##]</h2>
 									</header>
 
-									<div id="post-container">
-										[##_article_rep_desc_##]
+									<div id="list-container">
+										<ol class="grid">
+											<s_list_rep>
+												<li class="grid-item">
+													<a href="[##_list_rep_link_##]">
+														<div class="thumbnail">
+															<s_list_rep_thumbnail><img src="//img1.daumcdn.net/thumb/R300x0/?fname=[##_list_rep_thumbnail_##]" alt=""></s_list_rep_thumbnail>
+															<h3 class="title">[##_list_rep_title_##]</h3>
+														</div>
+														<s_not_var_list-show-data>
+															<div class="data">
+																<s_not_var_list-hide-category>
+																	<div class="category">[##_list_rep_category_##]</div>
+																</s_not_var_list-hide-category>
+																<s_not_var_list-hide-date>
+																	<time class="date" datetime="[##_list_rep_date_year_##]-[##_list_rep_date_month_##]-[##_list_rep_date_day_##] [##_list_rep_date_hour_##]:[##_list_rep_date_minute_##]:[##_list_rep_date_second_##]">[##_list_rep_regdate_##]</time>
+																</s_not_var_list-hide-date>
+															</div>
+														</s_not_var_list-show-data>
+													</a>
+												</li>
+											</s_list_rep>
+										</ol>
+									</div>
+									<s_list_empty>
+										<div id="list-empty">
+											<i class="fas fa-ghost"></i>
+											<div class="screen-reader-text">게시물이 없습니다.</div>
+										</div>
+									</s_list_empty>
+								</section>
+							</s_list>
+
+							<s_article_rep>
+								<section id="post">
+									<div id="post-inner">
+										<header id="post-header">
+											<h2 class="title">[##_article_rep_title_##]</h2>
+											<div class="data">
+												<div class="common category"><a href="[##_article_rep_category_link_##]">[##_article_rep_category_##]</a></div>
+												<time class="common date" datetime="[##_article_rep_date_year_##]-[##_article_rep_date_month_##]-[##_article_rep_date_day_##] [##_article_rep_date_hour_##]:[##_article_rep_date_minute_##]:[##_article_rep_date_second_##]">[##_article_rep_simple_date_##]</time>
+												<div class="common author">[##_article_rep_author_##]</div>
+											</div>
+										</header>
+
+										<div id="post-container">
+											[##_article_rep_desc_##]
+										</div>
+
+										<s_tag_label>
+											<div id="post-tags">[##_tag_label_rep_##]</div>
+										</s_tag_label>
 									</div>
 
-									<s_tag_label>
-										<div id="post-tags">
-											<div class="label"><i class="fas fa-hashtag"></i></div>
-											<div class="list">[##_tag_label_rep_##]</div>
-										</div>
-									</s_tag_label>
-								</div>
+									<div id="post-moving">
+										<s_article_next>
+											<div class="common next">
+												<a href="[##_article_next_link_##]" class="[##_article_next_type_##]">
+													<div class="image">
+														<s_article_next_thumbnail>
+															<img src="//img1.daumcdn.net/thumb/C100x100/?fname=[##_article_next_thumbnail_link_##]" alt="이전 게시물">
+														</s_article_next_thumbnail>
+													</div>
 
-								<div id="post-moving">
-									<s_article_next>
-										<div class="common next">
-											<a href="[##_article_next_link_##]" class="[##_article_next_type_##]">
-												<div class="image">
-													<s_article_next_thumbnail>
-														<img src="//img1.daumcdn.net/thumb/C100x100/?fname=[##_article_next_thumbnail_link_##]" alt="이전 게시물">
-													</s_article_next_thumbnail>
-												</div>
+													<div class="label"><i class="fas fa-chevron-left"></i></div>
+													<div class="screen-reader-text">[##_article_next_title_##]</div>
+												</a>
+											</div>
+										</s_article_next>
 
-												<div class="label"><i class="fas fa-chevron-left"></i></div>
-												<div class="screen-reader-text">[##_article_next_title_##]</div>
-											</a>
-										</div>
-									</s_article_next>
+										<s_article_prev>
+											<div class="common prev">
+												<a href="[##_article_prev_link_##]" class="[##_article_prev_type_##]">
+													<div class="image">
+														<s_article_prev_thumbnail>
+															<img src="//img1.daumcdn.net/thumb/C100x100/?fname=[##_article_prev_thumbnail_link_##]" alt="이전 게시물">
+														</s_article_prev_thumbnail>
+													</div>
 
-									<s_article_prev>
-										<div class="common prev">
-											<a href="[##_article_prev_link_##]" class="[##_article_prev_type_##]">
-												<div class="image">
-													<s_article_prev_thumbnail>
-														<img src="//img1.daumcdn.net/thumb/C100x100/?fname=[##_article_prev_thumbnail_link_##]" alt="이전 게시물">
-													</s_article_prev_thumbnail>
-												</div>
+													<div class="label"><i class="fas fa-chevron-right"></i></div>
+													<div class="screen-reader-text">[##_article_prev_title_##]</div>
+												</a>
+											</div>
+										</s_article_prev>
+									</div>
 
-												<div class="label"><i class="fas fa-chevron-right"></i></div>
-												<div class="screen-reader-text">[##_article_prev_title_##]</div>
-											</a>
-										</div>
-									</s_article_prev>
-								</div>
+									<s_rp>
+										<div id="communicate">
+											<h2 class="title">+ COMMENTS</h2>
 
-								<s_rp>
-									<div id="communicate">
-										<h2 class="title">+ COMMENTS</h2>
+											<s_rp_container>
+												<div id="communicate-lists">
+													<ol class="rp1">
+														<s_rp_rep>
+															<li id="[##_rp_rep_id_##]" class="[##_rp_rep_class_##]">
+																<div class="contents">
+																	<div class="article">[##_rp_rep_desc_##]</div>
 
-										<s_rp_container>
-											<div id="communicate-lists">
-												<ol class="rp1">
-													<s_rp_rep>
-														<li id="[##_rp_rep_id_##]">
-															<div class="contents">
-																<div class="data">
-																	<div class="photo" style="background-image: url('[##_rp_rep_logo_##]');"></div>
+																	<div class="data">
+																		<div class="name">[##_rp_rep_name_##]</div>
+																		<div class="date">[##_rp_rep_date_##]</div>
 
-																	<div class="name">[##_rp_rep_name_##]</div>
-																	<div class="date">[##_rp_rep_date_##]</div>
-
-																	<div class="buttons">
-																		<a class="common address" href="[##_rp_rep_link_##]">#</a>
-																		<a class="common edit" onclick="[##_rp_rep_onclick_delete_##]" href="#">EDIT</a>
-																		<a class="common reply" onclick="[##_rp_rep_onclick_reply_##]" href="#">REPLY</a>
+																		<div class="buttons">
+																			<a class="common address" href="[##_rp_rep_link_##]">#</a>
+																			<a class="common edit" onclick="[##_rp_rep_onclick_delete_##]" href="#">EDIT</a>
+																			<a class="common reply" onclick="[##_rp_rep_onclick_reply_##]" href="#">REPLY</a>
+																		</div>
 																	</div>
 																</div>
 
-																<div class="article">[##_rp_rep_desc_##]</div>
-															</div>
+																<s_rp2_container>
+																	<ul class="rp2">
+																		<s_rp2_rep>
+																			<li id="[##_rp_rep_id_##]" class="[##_rp_rep_class_##]">
+																				<div class="contents">
+																					<div class="article">[##_rp_rep_desc_##]</div>
 
-															<s_rp2_container>
-																<ul class="rp2">
-																	<s_rp2_rep>
-																		<li id="[##_rp_rep_id_##]">
-																			<div class="contents">
-																				<div class="data">
-																					<div class="photo" style="background-image: url('[##_rp_rep_logo_##]');"></div>
+																					<div class="data">
+																						<div class="name">[##_rp_rep_name_##]</div>
+																						<div class="date">[##_rp_rep_date_##]</div>
 
-																					<div class="name">[##_rp_rep_name_##]</div>
-																					<div class="date">[##_rp_rep_date_##]</div>
-
-																					<div class="buttons">
-																						<a class="common address" href="[##_rp_rep_link_##]">#</a>
-																						<a class="common edit" onclick="[##_rp_rep_onclick_delete_##]" href="#">EDIT</a>
-																						<a class="common reply" onclick="[##_rp_rep_onclick_reply_##]" href="#">REPLY</a>
+																						<div class="buttons">
+																							<a class="common address" href="[##_rp_rep_link_##]">#</a>
+																							<a class="common edit" onclick="[##_rp_rep_onclick_delete_##]" href="#">EDIT</a>
+																						</div>
 																					</div>
 																				</div>
-
-																				<div class="article">[##_rp_rep_desc_##]</div>
-																			</div>
-																		</li>
-																	</s_rp2_rep>
-																</ul>
-															</s_rp2_container>
-														</li>
-													</s_rp_rep>
-												</ol>
-											</div>
-										</s_rp_container>
-
-										<s_rp_input_form>
-											<div id="communicate-editor">
-												<s_rp_member>
-													<s_rp_guest>
-														<div class="input">
-															<div class="common name">
-																<div class="label">NAME</div>
-																<input name="[##_rp_input_name_##]" value="[##_guest_name_##]" type="text">
-															</div>
-															<div class="common password">
-																<div class="label">PASSWORD</div>
-																<input name="[##_rp_input_password_##]" value="[##_rp_admin_check_##]" type="password">
-															</div>
-															<div class="common website">
-																<div class="label">WEBSITE</div>
-																<input name="[##_rp_input_homepage_##]" value="[##_guest_homepage_##]" type="url">
-															</div>
-														</div>
-													</s_rp_guest>
-												</s_rp_member>
-
-												<div class="textarea">
-													<textarea name="[##_rp_input_comment_##]"></textarea>
+																			</li>
+																		</s_rp2_rep>
+																	</ul>
+																</s_rp2_container>
+															</li>
+														</s_rp_rep>
+													</ol>
 												</div>
+											</s_rp_container>
 
-												<div class="buttons">
-													<label>
-														<input type="checkbox" name="secret">
-														<div class="label">SECRET</div>
-													</label>
-													<button onclick="[##_rp_onclick_submit_##]" type="submit">SUBMIT</button>
+											<s_rp_input_form>
+												<div id="communicate-editor">
+													<s_rp_member>
+														<s_rp_guest>
+															<div class="input">
+																<div class="common name">
+																	<div class="label">NAME</div>
+																	<input name="[##_rp_input_name_##]" value="[##_guest_name_##]" type="text">
+																</div>
+																<div class="common password">
+																	<div class="label">PASSWORD</div>
+																	<input name="[##_rp_input_password_##]" value="[##_rp_admin_check_##]" type="password">
+																</div>
+																<div class="common website">
+																	<div class="label">WEBSITE</div>
+																	<input name="[##_rp_input_homepage_##]" value="[##_guest_homepage_##]" type="url">
+																</div>
+															</div>
+														</s_rp_guest>
+													</s_rp_member>
+
+													<div class="textarea">
+														<textarea name="[##_rp_input_comment_##]"></textarea>
+													</div>
+
+													<div class="buttons">
+														<label class="secret">
+															<input type="checkbox" name="secret">
+															<div class="label">SECRET</div>
+														</label>
+
+														<button class="submit" onclick="[##_rp_onclick_submit_##]" type="submit">SUBMIT</button>
+													</div>
 												</div>
-											</div>
-										</s_rp_input_form>
+											</s_rp_input_form>
+
+											<script>
+												var commentForm = document.querySelector('#communicate form');
+
+												if ( ! commentForm.innerHTML ) {
+													commentForm.innerHTML = '<div class="comment-lock">이 게시물은 댓글을 작성할 수 없습니다.</div>';
+												}
+											</script>
+										</div>
+									</s_rp>
+								</section>
+							</s_article_rep>
+
+							<s_tag>
+								<section id="tags">
+									<header id="tags-header" class="screen-reader-text">
+										<h2 class="title">태그 클라우드</h2>
+									</header>
+
+									<div id="tags-container">
+										<div class="list">
+											<s_tag_rep><a href="[##_tag_link_##]" class="[##_tag_class_##]">[##_tag_name_##]</a></s_tag_rep>
+										</div>
 									</div>
-								</s_rp>
-							</section>
-						</s_article_rep>
-					</div>
-				</div>
-			</main>
+								</section>
+							</s_tag>
 
-			<footer id="footer">
-				<div class="container">
-					<div id="footer-inner">
-						<div class="copyright">Copyright 2019 [##_title_##] All Rights Reserved.</div>
-						<div class="other">
-							<a href="[##_rss_url_##]" target="_blank" rel="noopener">
-								<i class="fas fa-rss"></i>
-								<span class="screen-reader-text">RSS</span>
-							</a>
+							<s_guest>
+								<section id="guestbook">
+									<header id="guestbook-header" class="screen-reader-text">
+										<h2 class="title">방명록</h2>
+									</header>
+
+									<div id="guestbook-container">
+										<div id="communicate">
+											<s_guest_input_form>
+												<div id="communicate-editor">
+													<s_guest_member>
+														<s_guest_guest>
+															<div class="input">
+																<div class="common name">
+																	<div class="label">NAME</div>
+																	<input name="[##_guest_input_name_##]" value="[##_guest_name_##]" type="text">
+																</div>
+																<div class="common password">
+																	<div class="label">PASSWORD</div>
+																	<input name="[##_guest_input_password_##]" value="[##_guest_password_##]" type="password">
+																</div>
+																<div class="common website">
+																	<div class="label">WEBSITE</div>
+																	<input name="[##_guest_input_homepage_##]" value="[##_guest_homepage_##]" type="url">
+																</div>
+															</div>
+														</s_guest_guest>
+													</s_guest_member>
+
+													<div class="textarea">
+														<textarea name="[##_guest_textarea_body_##]"></textarea>
+													</div>
+
+													<div class="buttons">
+														<label class="secret">
+															<input type="checkbox" name="secret">
+															<div class="label">SECRET</div>
+														</label>
+
+														<button class="submit" onclick="[##_guest_onclick_submit_##]" type="submit">SUBMIT</button>
+													</div>
+												</div>
+											</s_guest_input_form>
+
+											<s_guest_container>
+												<div id="communicate-lists">
+													<ol class="rp1">
+														<s_guest_rep>
+															<li id="[##_guest_rep_id_##]" class="[##_guest_rep_class_##]">
+																<div class="contents">
+																	<div class="article">[##_guest_rep_desc_##]</div>
+
+																	<div class="data">
+																		<div class="name">[##_guest_rep_name_##]</div>
+																		<div class="date">[##_guest_rep_date_##]</div>
+
+																		<div class="buttons">
+																			<a class="common edit" onclick="[##_guest_rep_onclick_delete_##]" href="#">EDIT</a>
+																			<a class="common reply" onclick="[##_guest_rep_onclick_reply_##]" href="#">REPLY</a>
+																		</div>
+																	</div>
+																</div>
+
+																<s_guest_reply_container>
+																	<ul class="rp2">
+																		<s_guest_reply_rep>
+																			<li id="[##_guest_rep_id_##]" class="[##_guest_rep_class_##]">
+																				<div class="contents">
+																					<div class="article">[##_guest_rep_desc_##]</div>
+
+																					<div class="data">
+																						<div class="name">[##_guest_rep_name_##]</div>
+																						<div class="date">[##_guest_rep_date_##]</div>
+
+																						<div class="buttons">
+																							<a class="common edit" onclick="[##_guest_rep_onclick_delete_##]" href="#">EDIT</a>
+																						</div>
+																					</div>
+																				</div>
+																			</li>
+																		</s_guest_reply_rep>
+																	</ul>
+																</s_guest_reply_container>
+															</li>
+														</s_guest_rep>
+													</ol>
+												</div>
+											</s_guest_container>
+										</div>
+									</div>
+								</section>
+
+							</s_guest>
+
+							<s_paging>
+								<div id="pagination">
+									<a [##_prev_page_##] class="num prev [##_no_more_prev_##]">
+										<span class="screen-reader-text">PREV</span>
+										<i class="fas fa-chevron-left"></i>
+									</a>
+
+									<span class="numbox">
+										<s_paging_rep>
+										<a [##_paging_rep_link_##] class="num">[##_paging_rep_link_num_##]</a>
+										</s_paging_rep>
+									</span>
+
+									<a [##_next_page_##] class="num next [##_no_more_next_##]">
+										<span class="screen-reader-text">NEXT</span>
+										<i class="fas fa-chevron-right"></i>
+									</a>
+								</div>
+							</s_paging>
 						</div>
 					</div>
 				</div>
-			</footer>
+				<div id="overlay"></div>
+			</main>
 		</div>
 	</s_t3>
 
@@ -282,23 +445,6 @@
 	<script src="./images/imagesloaded.pkgd.min.js"></script>
 
 	<!-- Core -->
-	<script>
-		// list only
-		var grid = document.querySelector('#list-container .grid');
-
-		if ( grid !== null ) {
-			var msnry = new Masonry( grid, {
-				initLayout: false,
-				itemSelector: '.grid-item',
-				percentPosition: true,
-				horizontalOrder: true
-			});
-
-			imagesLoaded( grid ).on( 'progress', function() {
-				msnry.layout();
-				grid.parentNode.classList.add('loaded');
-			});
-		}
-	</script>
+	<script src="./images/core.footer.min.js"></script>
 </body>
 </html>

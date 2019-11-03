@@ -1,0 +1,83 @@
+@mixin max-w($attr) {
+	@media all and (max-width: #{$attr}px) {
+		@content;
+	}
+}
+@mixin min-w($attr) {
+	@media all and (min-width: #{$attr}px) {
+		@content;
+	}
+}
+@mixin min-max-w($min, $max) {
+	@media all and (min-width: #{$min}px) and (max-width: #{$max}px) {
+		@content;
+	}
+}
+
+@mixin clearfix() {
+	&::after {
+		content: '';
+		display: block;
+		width: 100%;
+		clear: both;
+	}
+}
+
+@mixin pos-abs-full($z-index: 1) {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: $z-index;
+	width: 100%;
+	height: 100%;
+}
+
+@mixin retinaBackground($uri, $extension) {
+	background-image: url('#{$uri}.#{$extension}');
+
+	@media all and (-webkit-min-device-pixel-ratio: 1.5),
+	all and (-o-min-device-pixel-ratio: 3/2),
+	all and (min--moz-device-pixel-ratio: 1.5),
+	all and (min-device-pixel-ratio: 1.5) {
+		background-image: url('#{$uri}@2x.#{$extension}');
+	}
+}
+
+@mixin user-select($default: none) {
+	user-select: #{$default};
+	pointer-events: #{$default};
+	touch-action: #{$default};
+}
+
+@mixin screen-reader-text {
+	position: absolute !important;
+	display: block !important;
+	margin: 0;
+	padding: 0;
+	min-width: 0;
+	width: 0;
+	min-height: 0;
+	height: 0;
+	white-space: nowrap;
+	overflow: hidden;
+
+	&:focus {
+		top: 5px;
+		left: 5px;
+		z-index: 100000;
+		display: block;
+		padding: 15px 23px 14px;
+		clip: auto !important;
+		width: auto;
+		height: auto;
+		font-size: 14px;
+		font-weight: bold;
+		color: #21759b;
+		line-height: normal;
+		text-decoration: none;
+		background-color: #f1f1f1;
+		border-radius: 3px;
+		-webkit-box-shadow: 0 0 2px 2px rgba(0,0,0,0.6);
+		box-shadow: 0 0 2px 2px rgba(0,0,0,0.6);
+	}
+}
