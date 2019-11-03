@@ -573,17 +573,19 @@ a {
 						}
 					}
 
+					%beforeDot {
+						content: '';
+						display: inline-block;
+						margin: 0 10px;
+						width: 3px;
+						height: 1px;
+						background-color: $lightdark;
+					}
+
 					.date {
 						display: inline-flex;
+						align-items: center;
 
-						%beforeDot {
-							content: '';
-							display: inline-block;
-							margin: 0 10px;
-							width: 3px;
-							height: 1px;
-							background-color: $lightdark;
-						}
 
 						&::before {
 							@extend %beforeDot;
