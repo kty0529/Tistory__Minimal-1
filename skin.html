@@ -153,6 +153,29 @@
 								</section>
 							</s_list>
 
+							<s_article_protected>
+								<section id="protect">
+									<div id="protect-inner">
+										<header id="protect-header">
+											<h2 class="title">[##_article_rep_title_##]</h2>
+											<div class="data">
+												<div class="common category"><a href="[##_article_rep_category_link_##]">[##_article_rep_category_##]</a></div>
+												<time class="common date" datetime="[##_article_rep_date_year_##]-[##_article_rep_date_month_##]-[##_article_rep_date_day_##] [##_article_rep_date_hour_##]:[##_article_rep_date_minute_##]:[##_article_rep_date_second_##]">[##_article_rep_simple_date_##]</time>
+												<div class="common author">[##_article_rep_author_##]</div>
+											</div>
+										</header>
+
+										<div id="protect-container">
+											<div class="notice">이 글은 보호글입니다.<br>글을 읽으시려면 비밀번호를 입력해주세요.</div>
+											<div class="password-form">
+												<input type="password" maxlength="16" id="[##_article_password_##]" name="[##_article_password_##]" autofocus value="" onkeydown="if (event.keyCode == 13)[##_article_dissolve_##]">
+												<input type="button" class="submit" value="submit" onclick="[##_article_dissolve_##]">
+											</div>
+										</div>
+									</div>
+								</section>
+							</s_article_protected>
+
 							<s_article_rep>
 								<section id="post">
 									<div id="post-inner">
@@ -410,7 +433,6 @@
 										</div>
 									</div>
 								</section>
-
 							</s_guest>
 
 							<s_paging>
