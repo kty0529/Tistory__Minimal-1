@@ -1041,6 +1041,7 @@ $guestbook-color: #1d2738;
 }
 
 @include max-w(420) {
+	#protect,
 	#post {
 		&-header {
 			.data {
