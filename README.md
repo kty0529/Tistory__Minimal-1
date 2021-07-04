@@ -4,7 +4,7 @@
 
 ## Infomation
 - 스킨명: Minimal #1
-- 데모 블로그: https://minimal1.ts.themebrew.io
+- 데모 블로그: http://minimal.ts.wallel.com
 - 반응형웹 지원
 - 사용 언어: HTML5, CSS3, SCSS, Javascript
 
